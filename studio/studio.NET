@@ -1,0 +1,30 @@
+Wire List
+
+<<< Component List >>>
+Ticker                          N1             
+L298                            N2             
+Ticker                          N3             
+FlipFlop                        N4             
+GPOUT                           N5             
+Counter                         N7             
+
+<<< Wire List >>>
+
+  NODE  REFERENCE  PIN #   PIN NAME       PIN TYPE    PART VALUE
+
+[00007] NetN4_2
+        N4         2       2              OUTPUT      FlipFlop
+        N5         1       IN             INPUT       GPOUT
+
+[00006] NetN3_1
+        N3         1       OUT            OUTPUT      Ticker
+        N4         1       IN             INPUT       FlipFlop
+
+[00002] NetN2_1
+        N2         1       Value          INPUT       L298
+        N7         3       OUT            OUTPUT      Counter
+
+[00001] NetN1_1
+        N1         1       OUT            OUTPUT      Ticker
+        N7         1       COUNT-IN       INPUT       Counter
+

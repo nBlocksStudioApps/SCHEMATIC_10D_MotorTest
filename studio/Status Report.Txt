@@ -1,0 +1,10 @@
+Output: WireList Netlist
+Type  : WireListNetlist
+From  : Project [10D_MotorTest.PrjPcb]
+   Generated File[studio.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 5:58:41 PM On 21-Nov-20
