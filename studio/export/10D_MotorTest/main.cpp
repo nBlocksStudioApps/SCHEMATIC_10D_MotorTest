@@ -7,25 +7,42 @@
 #include "nlib\nblocks.h"
 #include "nlib\BSP\bsp.h"
 // Custom nodes:
-#include "nlib\Ticker\ticker.h"
+#include "nlib\GPI\gpi.h"
+#include "nlib\ValueTrig\valuetrig.h"
 #include "nlib\L298\L298.h"
+#include "nlib\StringFormat\stringformat.h"
+#include "nlib\StringSerial\stringserial.h"
+#include "nlib\Ticker\ticker.h"
 #include "nlib\FlipFlop\flipflop.h"
 #include "nlib\GPOUT\gpout.h"
-#include "nlib\Counter\counter.h"
 
 // -*-*- List of node objects -*-*-
-nBlock_Ticker        nb_nBlockNode0_Ticker   (1000);
-nBlock_L298          nb_nBlockNode1_L298     (LED2, LED3, LED4);
-nBlock_Ticker        nb_nBlockNode2_Ticker   (100);
-nBlock_FlipFlop      nb_nBlockNode3_FlipFlop (0);
-nBlock_GPOUT         nb_nBlockNode4_GPOUT    (LED1, PullNone, 1);
-nBlock_Counter       nb_nBlockNode5_Counter  (4);
+nBlock_GPI               nb_nBlockNode0_GPI          (p12);
+nBlock_ValueTrig         nb_nBlockNode1_ValueTrig    (1);
+nBlock_GPI               nb_nBlockNode2_GPI          (p14);
+nBlock_ValueTrig         nb_nBlockNode3_ValueTrig    (2);
+nBlock_L298              nb_nBlockNode4_L298         (LED2, LED3, LED4);
+nBlock_GPI               nb_nBlockNode5_GPI          (p15);
+nBlock_ValueTrig         nb_nBlockNode6_ValueTrig    (0);
+nBlock_StringFormat      nb_nBlockNode7_StringFormat ("Value: %d\n");
+nBlock_StringSerial      nb_nBlockNode8_StringSerial (USBTX, USBRX);
+nBlock_Ticker            nb_nBlockNode9_Ticker       (100);
+nBlock_FlipFlop          nb_nBlockNode10_FlipFlop    (0);
+nBlock_GPOUT             nb_nBlockNode11_GPOUT       (LED1, PullNone, 1);
 
 // -*-*- List of connection objects -*-*-
-nBlockConnection    n_conn0( &nb_nBlockNode3_FlipFlop, 0,    &nb_nBlockNode4_GPOUT,    0);
-nBlockConnection    n_conn1( &nb_nBlockNode2_Ticker,   0,    &nb_nBlockNode3_FlipFlop, 0);
-nBlockConnection    n_conn2( &nb_nBlockNode5_Counter,  0,    &nb_nBlockNode1_L298,     0);
-nBlockConnection    n_conn3( &nb_nBlockNode0_Ticker,   0,    &nb_nBlockNode5_Counter,  0);
+nBlockConnection    n_conn0( &nb_nBlockNode10_FlipFlop,    0,    &nb_nBlockNode11_GPOUT,       0);
+nBlockConnection    n_conn1( &nb_nBlockNode9_Ticker,       0,    &nb_nBlockNode10_FlipFlop,    0);
+nBlockConnection    n_conn2( &nb_nBlockNode7_StringFormat, 0,    &nb_nBlockNode8_StringSerial, 0);
+nBlockConnection    n_conn3( &nb_nBlockNode5_GPI,          1,    &nb_nBlockNode6_ValueTrig,    0);
+nBlockConnection    n_conn4( &nb_nBlockNode2_GPI,          1,    &nb_nBlockNode3_ValueTrig,    0);
+nBlockConnection    n_conn5( &nb_nBlockNode1_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
+nBlockConnection    n_conn6( &nb_nBlockNode1_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
+nBlockConnection    n_conn7( &nb_nBlockNode3_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
+nBlockConnection    n_conn8( &nb_nBlockNode3_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
+nBlockConnection    n_conn9( &nb_nBlockNode6_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
+nBlockConnection    n_conn10( &nb_nBlockNode6_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
+nBlockConnection    n_conn11( &nb_nBlockNode0_GPI,          1,    &nb_nBlockNode1_ValueTrig,    0);
 
 
 // -*-*- Main function -*-*-
