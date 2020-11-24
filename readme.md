@@ -150,7 +150,7 @@ width = 400
 </p>
 <p align="center">
 <img
-src="img/17.GIF"
+src="img/17.gif"
 width = 400
 />
 </p>
