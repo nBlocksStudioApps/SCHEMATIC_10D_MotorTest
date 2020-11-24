@@ -137,7 +137,7 @@ width = 200
 
 <!-- pagebreak -->
 
-Test with LPC1768-mbed, L298-breakout and a DC Motor  PASS:heavy_check_mark:
+Test with LPC1768-mbed, L298-breakout, a DC Motor and Linear motion assembly. PASS:heavy_check_mark:
 
 </p>
 <p align="center">
