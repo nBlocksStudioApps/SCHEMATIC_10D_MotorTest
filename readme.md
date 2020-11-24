@@ -137,12 +137,28 @@ width = 200
 
 <!-- pagebreak -->
 
-Next: test with LPC1768-mbed, L298-breakout and a DC Motor :question:
+Test with LPC1768-mbed, L298-breakout and a DC Motor  PASS:heavy_check_mark:
+
+</p>
+<p align="center">
+<img
+src="img/16.PNG"
+width = 400
+/>
+</p>
+
+</p>
+<p align="center">
+<img
+src="img/17.GIF"
+width = 400
+/>
+</p>
 
 ----
 
 <!-- pagebreak -->
 
-Next: Test with Nucleo STM32F401 AND Nucleo DC motor expansion board :question:
+Next: Test with Nucleo STM32F401 and Nucleo DC motor expansion board :question:
 
 ----
