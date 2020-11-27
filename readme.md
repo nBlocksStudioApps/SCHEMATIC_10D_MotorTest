@@ -1,6 +1,6 @@
 # SCHEMATIC_10D_MotorTest
 
-Schematic Design project to test the new Nodes:  
+[Schematic Design project to test the new Nodes](https://github.com/nBlocksStudioApps/SCHEMATIC_10D_MotorTest):  
 
 * [Node L298](https://github.com/nBlocksStudioNodes/nblocks_l298) :heavy_check_mark:
 * [Node GPITrigger](https://github.com/nBlocksStudioNodes/nblocks_gpittrigger) :x:
